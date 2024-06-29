@@ -1,6 +1,7 @@
-import { cache } from "react";
+import { cache } from 'react';
+import apiConfig from '../config/api';
 
-const BASE_ADMIN_API = 'https://kidcorp-admin-staging.cjfritz.dev/api';
+const { BASE_ADMIN_API } = apiConfig;
 
 export const getFeaturedProducts = cache(async () => {
   const res = await fetch(`${BASE_ADMIN_API}/shopify/featured-products`);
@@ -12,4 +13,4 @@ export const getFeaturedProducts = cache(async () => {
   } else {
     return null;
   }
-})
+});
